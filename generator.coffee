@@ -4,11 +4,14 @@ class PerlinNoiseGenerator
     size: 0
     persistence: 0
 
+    constructor: () ->
+
     generate: (size, persistence) ->
         @size = size
         @persistence = persistence
         octaves = Math.log(size, 2)
 
+        @terra = [[]]
         for x in [0..size]
             for y in [0..size]
                 @terra[x][y] = Math.random()
