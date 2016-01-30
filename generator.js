@@ -19,11 +19,11 @@ PerlinNoiseGenerator = (function() {
     this.terra = (function() {
       var _i, _results;
       _results = [];
-      for (x = _i = 0; 0 <= size ? _i <= size : _i >= size; x = 0 <= size ? ++_i : --_i) {
+      for (x = _i = 0; 0 <= size ? _i < size : _i > size; x = 0 <= size ? ++_i : --_i) {
         _results.push((function() {
           var _j, _results1;
           _results1 = [];
-          for (y = _j = 0; 0 <= size ? _j <= size : _j >= size; y = 0 <= size ? ++_j : --_j) {
+          for (y = _j = 0; 0 <= size ? _j < size : _j > size; y = 0 <= size ? ++_j : --_j) {
             _results1.push(Math.random());
           }
           return _results1;
@@ -31,7 +31,7 @@ PerlinNoiseGenerator = (function() {
       }
       return _results;
     })();
-    for (octave = _i = 0; 0 <= octaves ? _i <= octaves : _i >= octaves; octave = 0 <= octaves ? ++_i : --_i) {
+    for (octave = _i = 0; 0 <= octaves ? _i < octaves : _i > octaves; octave = 0 <= octaves ? ++_i : --_i) {
       this.octave(octave);
     }
     return this.terra;
@@ -45,11 +45,11 @@ PerlinNoiseGenerator = (function() {
     arr = (function() {
       var _i, _results;
       _results = [];
-      for (j = _i = 0; 0 <= m ? _i <= m : _i >= m; j = 0 <= m ? ++_i : --_i) {
+      for (j = _i = 0; 0 <= m ? _i < m : _i > m; j = 0 <= m ? ++_i : --_i) {
         _results.push((function() {
           var _j, _results1;
           _results1 = [];
-          for (i = _j = 0; 0 <= n ? _j <= n : _j >= n; i = 0 <= n ? ++_j : --_j) {
+          for (i = _j = 0; 0 <= n ? _j < n : _j > n; i = 0 <= n ? ++_j : --_j) {
             _results1.push(Math.random() * amp);
           }
           return _results1;
@@ -60,11 +60,11 @@ PerlinNoiseGenerator = (function() {
     nx = this.size / (n - 1);
     ny = this.size / (m - 1);
     _results = [];
-    for (ky = _i = 0, _ref = this.size; 0 <= _ref ? _i <= _ref : _i >= _ref; ky = 0 <= _ref ? ++_i : --_i) {
+    for (ky = _i = 0, _ref = this.size; 0 <= _ref ? _i < _ref : _i > _ref; ky = 0 <= _ref ? ++_i : --_i) {
       _results.push((function() {
         var _j, _ref1, _results1;
         _results1 = [];
-        for (kx = _j = 0, _ref1 = this.size; 0 <= _ref1 ? _j <= _ref1 : _j >= _ref1; kx = 0 <= _ref1 ? ++_j : --_j) {
+        for (kx = _j = 0, _ref1 = this.size; 0 <= _ref1 ? _j < _ref1 : _j > _ref1; kx = 0 <= _ref1 ? ++_j : --_j) {
           i = parseInt(kx / nx);
           j = parseInt(ky / ny);
           dx0 = kx - i * nx;

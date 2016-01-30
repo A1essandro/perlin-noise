@@ -11,11 +11,11 @@ class PerlinNoiseGenerator
         @persistence = persistence
         octaves = Math.log(size, 2)
 
-        @terra = for x in [0..size]
-            for y in [0..size]
+        @terra = for x in [0...size]
+            for y in [0...size]
                 Math.random()
 
-        for octave in [0..octaves]
+        for octave in [0...octaves]
             @octave(octave)
 
         @terra
@@ -26,15 +26,15 @@ class PerlinNoiseGenerator
 
         n = m = freq + 1
 
-        arr = for j in [0..m]
-            for i in [0..n]
+        arr = for j in [0...m]
+            for i in [0...n]
                 Math.random() * amp
 
         nx = @size / (n - 1)
         ny = @size / (m - 1)
 
-        for ky in [0..@size]
-            for kx in [0..@size]
+        for ky in [0...@size]
+            for kx in [0...@size]
                 i = parseInt(kx / nx)
                 j = parseInt(ky / ny)
 
